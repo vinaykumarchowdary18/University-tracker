@@ -645,20 +645,18 @@ def main():
     # Run once immediately on startup
     run_daily_check()
 
-    # Schedule daily
-    scheduler = BlockingScheduler(timezone="Asia/Kolkata")
-    scheduler.add_job(
-        run_daily_check,
-        trigger="cron",
-        hour=SEND_TIME_H,
-        minute=SEND_TIME_M,
-        id="daily_check"
-    )
-    log.info("Scheduler started. Press Ctrl+C to stop.")
-    try:
+if __name__ == '__main__':
+    import os
+    # When running via GitHub Actions, just run once and exit
+    if os.getenv('GITHUB_ACTIONS'):
+        run_daily_check()
+    else:
+        # Local run — use APScheduler for scheduled execution
+        from apscheduler.schedulers.blocking import BlockingScheduler
+        scheduler = BlockingScheduler()
+        scheduler.add_job(run_daily_check, 'cron', hour=9, minute=0)
+        print("Scheduler started. Press Ctrl+C to stop.")
         scheduler.start()
-    except (KeyboardInterrupt, SystemExit):
-        log.info("Tracker stopped.")
 
 
 if __name__ == "__main__":
