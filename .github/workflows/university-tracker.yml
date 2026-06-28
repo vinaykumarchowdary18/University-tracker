@@ -1,0 +1,40 @@
+name: University Deadline Tracker
+
+on:
+  schedule:
+    # Runs daily at 3:30 AM UTC = 9:00 AM IST
+    - cron: '30 3 * * *'
+  workflow_dispatch:  # Manual "Run workflow" button in GitHub Actions UI
+
+jobs:
+  send-deadline-digest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 apscheduler
+
+      - name: Run tracker and send email
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+          SEND_TO:    ${{ secrets.SEND_TO }}
+        run: |
+          python tracker.py
+
+      - name: Save HTML digest as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deadline-digest-${{ github.run_number }}
+          path: "*.html"
+          retention-days: 7
