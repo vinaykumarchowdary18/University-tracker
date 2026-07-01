@@ -8,7 +8,7 @@ Last updated: June 2026
 
 PROFILE = {
     "name": "Vinay Kumar Mandadi",
-    "cgpa_current": 6.61,
+    "cgpa_current": 6.7,
     "cgpa_expected": 7.0,
     "gre_total": 324,
     "gre_quant": 168,
@@ -312,9 +312,6 @@ UNIVERSITIES = [
      "docs":["Passport","Transcript","CV","PS","2 LORs","TOEFL"]},
 
     # ══════════════════════════════════════════════════════════
-    # 🇮🇪  IRELAND  (6 universities)
-    # ══════════════════════════════════════════════════════════
-        # ══════════════════════════════════════════════════════════
     # 🇮🇪  IRELAND  (7 universities)
     # ══════════════════════════════════════════════════════════
     {"id":"IE01","name":"University of Galway","country":"Ireland","city":"Galway","flag":"🇮🇪",
@@ -361,7 +358,6 @@ UNIVERSITIES = [
      "notes":"Affordable. Apple HQ in Cork. 60% minimum.",
      "docs":["Passport","Transcript","CV","PS","2 LORs","TOEFL"]},
 
-    # --- TRINITY ADDED HERE ---
     {"id":"IE07","name":"Trinity College Dublin","country":"Ireland","city":"Dublin","flag":"🇮🇪",
      "qs_rank":"81","qs_num":81,
      "program":"MSc CS / MSc AI",
@@ -396,7 +392,7 @@ UNIVERSITIES = [
      "docs":["Passport","Transcript","CV","PS","TOEFL"]},
 
     # ══════════════════════════════════════════════════════════
-    # 🇩🇪  GERMANY + 🇦🇹  AUSTRIA  (8 universities — added TU Braunschweig)
+    # 🇩🇪  GERMANY + 🇦🇹  AUSTRIA  (8 universities)
     # ══════════════════════════════════════════════════════════
     {"id":"DE01","name":"Universität Duisburg-Essen","country":"Germany","city":"Essen","flag":"🇩🇪",
      "qs_rank":"551-600","qs_num":575,
@@ -581,7 +577,7 @@ UNIVERSITIES = [
      "docs":["Passport","Transcript","TOEFL","CV","PS"]},
 
     # ══════════════════════════════════════════════════════════
-    # 🇪🇺  EUROPE — Czech, Estonia, Netherlands, Sweden (added Eindhoven)
+    # 🇪🇺  EUROPE — Czech, Estonia, Netherlands, Sweden
     # ══════════════════════════════════════════════════════════
     {"id":"CZ01","name":"Charles University Prague","country":"Czech Republic","city":"Prague","flag":"🇨🇿",
      "qs_rank":"281","qs_num":281,
