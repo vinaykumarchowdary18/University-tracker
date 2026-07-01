@@ -218,7 +218,7 @@ def get_alert_status(uni: dict, web_info: dict, today: date) -> dict:
 
 PROFILE = {
     "name": "Vinay Kumar Mandadi",
-    "cgpa_current": 6.61,
+    "cgpa_current": 6.7,
     "cgpa_expected": 7.0,
     "gre_total": 324,
     "gre_quant": 168,
